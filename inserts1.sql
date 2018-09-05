@@ -109,27 +109,27 @@ SELECT * FROM `StandardPokoju`;
 
 INSERT INTO `WidokZOkna` VALUES (4, 'Widok na morze');
 INSERT INTO `WidokZOkna` VALUES (1, 'Widok na jezioro');
-INSERT INTO `WidokZOkna` VALUES (2, 'Widok na góry');
+INSERT INTO `WidokZOkna` VALUES (2, 'Widok na gory');
 INSERT INTO `WidokZOkna` VALUES (3, 'Widok na miasto');
 
 SELECT * FROM `WidokZOkna`;
 
 alter table Pokoj auto_increment = 1;
 
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 3, 2, 10, 200, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 2, 2, 1, 150, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 3, 1, 10, 200, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 2, 1, 1, 150, NULL);
 INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 1, 3, 2, 100, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 4, 2, NULL, 80, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 6, 1, 4, 180, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 5, 3, NULL, 120, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 7, 1, 6, 100, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 8, 4, 7, 210, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 9, 4, NULL, 150, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 4, 1, NULL, 80, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 6, 3, 4, 180, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 5, 2, NULL, 120, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 7, 3, 6, 100, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 8, 1, 7, 210, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 9, 1, NULL, 150, NULL);
 INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 10, 3, 9, 50, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 14, 4, 3, 60, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 11, 2, NULL, 180, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 12, 2, 5, 140, NULL);
-INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 15, 1, NULL, 200, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 14, 2, 3, 60, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 11, 1, NULL, 180, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 12, 4, 5, 140, NULL);
+INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 1, 15, 2, NULL, 200, NULL);
 INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 2, 16, 3, 8, 100, NULL);
 INSERT INTO Pokoj (StandardPokoju_idStandardPokoju, Pietro_idPietro, WidokZOkna_idWidokZOkna, Rezerwacja_idRezerwacja, Cena, Rabat_kod) VALUES ( 3, 13, 3, NULL, 90, NULL);
 
