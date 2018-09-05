@@ -27,7 +27,7 @@
                 </select>
                      Standard pokoju:
                 <select name="room_standard" size="1" >
-                    <option>Ekonomiczny</option>
+                    <option>Standard</option>
                     <option>Rodzinny</option>
                     <option>Apartament</option>
                 </select>

@@ -16,6 +16,8 @@
     
    <?php 
     require_once "connect.php";
+    
+    //dane klienta - sprawdz po id_ czy już jest w bazie - jeżeli tak to weź jego id;
     $email = $_POST['email'];
     $name = $_POST['name'];
     $surname = $_POST['surname'];
@@ -27,6 +29,9 @@
     
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
+    
+    
+    //klienta nie ma w bazie
     if($connection->connect_errno != 0)
     {
 		echo "Error".$connection->connect_errno."Opis: ".$connection->connect_error;	

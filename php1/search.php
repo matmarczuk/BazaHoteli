@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang = "pl">
 <head>
@@ -30,7 +33,7 @@ th {
             <tr>
                 <th>Nazwa hotelu</th>
                 <th>Miejscowosc</th>
-                <th>Udogodnienia</th>
+                <th>Widok z okna</th>
                 <th>Cena za pokój</th>
             </tr>
             </style>
@@ -54,12 +57,29 @@ th {
 	{
 
 	$place = $_POST['place'];
-        $pers_num=$_POST['pers_num'];
-	//$arr_date = $_POST['arr_date'];
-	//$dep_date = $_POST['dep_date'];
-
-	$sql = "SELECT * FROM Hotel WHERE lokalizacja = '$place'";
-
+        $pers_num=(int)$_POST['pers_num'];
+        $standard = $_POST['room_standard'];
+	$arr_date = $_POST['arr_date'];
+	$dep_date = $_POST['dep_date'];
+        
+        $_SESSION['przyjazd'] = $arr_date;
+        $_SESSION['wyjazd'] = $dep_date;
+        $_SESSION['losob'] = $pers_num;
+                
+        echo $arr_date;
+	$sql = "select  Hotel.nazwa, Hotel.adres_miasto, Hotel.idHotel, WidokZOkna.Widok, Pokoj.Cena, Pokoj.nrPokoju
+        from Hotel 
+        inner join Pietro on Hotel.idHotel = Pietro.Hotel_idHotel 
+        join Pokoj on Pokoj.Pietro_idPietro = Pietro.idPietro
+        join WidokZOkna on WidokZOkna.idWidokZOkna =  Pokoj.WidokZOkna_idWidokZOkna
+        join StandardPokoju on Pokoj.StandardPokoju_idStandardPokoju = StandardPokoju.idStandardPokoju
+        join Zamowienie on Pokoj.nrPokoju = Zamowienie.Pokoj_nrPokoju
+        where StandardPokoju.StandardPokoju = '$standard'
+	and $pers_num <= StandardPokoju.maxLiczbaOsob 
+        and Hotel.lokalizacja = '$place'
+        and ((Zamowienie.data_od >= '$arr_date' and Zamowienie.data_od >= '$dep_date')
+        or (Zamowienie.data_do <= '$arr_date' and Zamowienie.data_do <= '$dep_date'));";
+    
 	if($rezultat = @$connection->query($sql))
 	{
 
@@ -71,13 +91,14 @@ th {
             
         <tr>
             <td><?php echo $row['nazwa'];?></td>
-            <td><?php echo $row['nazwa'];?></td>
-            <td><?php echo $row['nazwa'];?></td>
-            <td><?php echo $row['nazwa'];?></td>
+            <td><?php echo $row['adres_miasto'];?></td>
+            <td><?php echo $row['Widok'];?></td>
+            <td><?php echo $row['Cena'];?></td>
             <td><input style ="background-color: gold;
                                width: 100px;" 
                                type = "submit" value = "REZERWUJĘ"/></td>
-             <input type="hidden" value=<?php echo $row['idHotel']?> name="id"/>
+             <input type="hidden" value=<?php echo $row['nrPokoju']?> name="nrPokoju"/>
+              <input type="hidden" value=<?php echo $row['idHotel']?> name="idHotel"/>
         </tr>
         </form>
         

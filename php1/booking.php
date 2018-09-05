@@ -13,43 +13,41 @@ session_start();
     <?php
 
     require_once "connect.php";
-    $raz = 200;
-    $obnizka = 0;
-    if(isset($_POST['rabat']))
-    {
-    $cena = $_POST['rabat'];
-    $sql = "select * from Rabat where kod = '$cena';";
-    $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
+    ///////////////////////////////////////////////////
+    $obnizka = 0; //nominalny rabat
     
-    if($rezultat = @$connection->query($sql))
+    if(isset($_POST['rabat'])) //przypadek po kliknieciu rabatu 
     {
-        
-        while($row = mysqli_fetch_assoc($rezultat)) 
+        $cena = $_POST['rabat'];
+        $sql = "select * from Rabat where kod = '$cena';";
+        $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
+
+
+        if($rezultat = @$connection->query($sql))
         {
-      
-            $obnizka = $row['% Obnizki'];
-        //echo print_r($row);       // Print the entire row data
+
+            while($row = mysqli_fetch_assoc($rezultat)) 
+            {
+
+                $obnizka = $row['% Obnizki'];
+            //echo print_r($row);       // Print the entire row data
+            }
         }
-    }
-    //$obnizka = (int)$rezultat['% Obnizki'];
- 
-    }
-    
-    if(isset($_POST['id']))
-    {
-    
-    $_SESSION['search'] = $_POST['id'];
-    $id = $_POST['id'];
+        
+        //$obnizka = (int)$rezultat['% Obnizki'];
+         $nr_Pokoj = $_SESSION['rem_nrPokoj'];
+         $idHotel = $_SESSION['rem_idHotel'];
     }
     else
-    {  
-        $id = $_SESSION['search'];
-    } 
-    
-    
-    echo"$id";
-    
+    {
+    ///////////////////////
+
+        $nr_Pokoj = $_POST['nrPokoju'];
+        $idHotel = $_POST['idHotel'];
+        $_SESSION['rem_nrPokoj'] = $nr_Pokoj;
+        $_SESSION['rem_idHotel'] = $idHotel;
+    }
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
     if($connection->connect_errno != 0)
@@ -59,7 +57,7 @@ session_start();
     else
     {   
             
-            $sql = "SELECT * FROM Hotel WHERE idHotel = $id";
+            $sql = "SELECT H.*, P.*  FROM Hotel AS H,Pokoj AS P WHERE idHotel = $idHotel AND nrPokoju = $nr_Pokoj; ";
             
             if($rezultat = @$connection->query($sql))
             {
@@ -70,22 +68,22 @@ session_start();
                    // <div class = "transbox" style = "background-color: blue; margin-left: 150px; margin-right: 150px; transform: scale(0.85);">
                       ?> 
                       
-                        <div class="transbox" style = "background-color: yellow; margin-left: 190px; margin-right: 190px; text-align:center;padding: 1px;">
-                            Podsumowanie zamówienia:
+                        <div class="transbox" style = "background-color: yellow;margin-left: 280px; margin-right: 280px; text-align:center;padding: 1px;">
+                            <u>Podsumowanie zamówienia:</u>
                             <br></br>
-                         Nazwa hotelu: <?php echo $row['nazwa'];?>    
+                            <b>Nazwa hotelu:</b> <?php echo $row['nazwa'];?>    
                          <br></br>
-                         Termin: 
+                         <b>Termin:</b> <?php echo $_SESSION['przyjazd'] ," - ", $_SESSION['wyjazd']; ?>
                          <br></br>
-                         Liczba osób:3453
+                         <b>Liczba osób:</b><?php echo $_SESSION['losob'];?>
                          <br></br>
-                         Do zapłaty: <?php echo (int)$raz * (1-(int)$obnizka*0.01);?>
+                         <b>Do zapłaty:</b> <?php echo (int)$row['Cena'] * (1-(int)$obnizka*0.01), " PLN ";?>
                          
                          
                          
                       </div>
                        <form align ="center" action = "booking.php" method = "post" >
-                         <input type="text" align= "right" style = "position: static; transform: scale(0.8); border-color: red; border-width: 2px;" placeholder="Kod rabatowy" name="rabat"/>
+                         <input type="text" align= "right" style = "position: static; transform: scale(0.8); border-color: red; width: 200px; border-width: 2px;" placeholder="Kod rabatowy" name="rabat"/>
                          <input type ="submit"  style="transform: scale(0.8); background-color: greenyellow " value="Sprawdź rabat"/>
 
                       </form>
