@@ -53,7 +53,7 @@ th {
         if(!empty($_POST['name1']) && !empty($_POST['surname']))
         {
             
-            $sql = "SELECT Kl.*,termin,cena,Rezerwacja_idRezerwacja FROM Zamowienie JOIN Klient AS Kl ON idKlient=Klient_idKlient WHERE imie = '{$name}' AND nazwisko = '{$surname}'";
+            $sql = "SELECT Kl.*,termin,cena,Rezerwacja_idRezerwacja FROM Zamowienie JOIN Klient AS Kl ON idKlient=Klient_idKlient WHERE imie = $name AND nazwisko = $surname";
 
             
         }

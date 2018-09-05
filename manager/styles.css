@@ -1,0 +1,53 @@
+body
+{
+background: url('https://cdn-images-1.medium.com/max/1600/1*fzSHwR5vbLlI76IZYrZ9Cg.jpeg');
+background-size:cover;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+days
+{
+color:blue;
+
+}
+
+input
+{	text-align: center;
+	border-radius: 25px;
+	border: 1px solid blue;
+	margin: auto;
+        width: 30%;
+        padding: 10px;
+}
+form.searching 
+{
+text-align: center;
+margin:30px;
+}
+input.place
+{
+width:50%;
+}
+input.szukaj
+{
+width: 30%;
+}
+
+
+div.transbox {
+  margin-left:240px;
+  margin-right:240px;
+  padding: 5px;
+  border-radius: 25px;
+  background-color: #D4F2D2;
+  border: 1px solid black;
+  opacity: 0.89;
+  filter: alpha(opacity=20); /* For IE8 and earlier */
+}
+table
+{
+    background-color: red;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+}

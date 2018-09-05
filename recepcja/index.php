@@ -22,17 +22,7 @@
 		<input class = "szukaj" type = "submit" value = "SZUKAJ"/>
         </form>
 </div>
-    <div class="transbox" style="background-color: graytext;"> 
-	<form class = "searching" action = "search.php" method = "post">
-            Imię:<input class="name1" type ="text" name = "name1">
-            
-            Nazwisko:<input class="surname" type ="text" name = "surname"/>
-            <br><br>
-            Numer rezerwacji: <input class="res_id" type ="text" name = "res_id"/>
-            <br><br>
-		<input class = "szukaj" type = "submit" value = "SZUKAJ"/>
-        </form>
-</div>
+
 	<?php
 
 

@@ -19,7 +19,6 @@ session_start();
     {
     $cena = $_POST['rabat'];
     $sql = "select * from Rabat where kod = '$cena';";
-    echo $sql;
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
     
@@ -28,13 +27,11 @@ session_start();
         
         while($row = mysqli_fetch_assoc($rezultat)) 
         {
-            echo $row['% Obnizki']; // Print a single column data
+      
             $obnizka = $row['% Obnizki'];
         //echo print_r($row);       // Print the entire row data
         }
     }
-    else
-        echo "lipa";
     //$obnizka = (int)$rezultat['% Obnizki'];
  
     }
