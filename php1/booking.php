@@ -39,8 +39,8 @@ session_start();
          $nr_Pokoj = $_SESSION['rem_nrPokoj'];
          $idHotel = $_SESSION['rem_idHotel'];
     }
-    else
-    {
+    else //otworzenie strony po raz pierszy 
+    {   
     ///////////////////////
 
         $nr_Pokoj = $_POST['nrPokoju'];
@@ -48,6 +48,8 @@ session_start();
         $_SESSION['rem_nrPokoj'] = $nr_Pokoj;
         $_SESSION['rem_idHotel'] = $idHotel;
     }
+    
+
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
     if($connection->connect_errno != 0)
@@ -77,7 +79,7 @@ session_start();
                          <br></br>
                          <b>Liczba osób:</b><?php echo $_SESSION['losob'];?>
                          <br></br>
-                         <b>Do zapłaty:</b> <?php echo (int)$row['Cena'] * (1-(int)$obnizka*0.01), " PLN ";?>
+                         <b>Do zapłaty:</b> <?php echo (int)$row['Cena'] * (1-(int)$obnizka*0.01), " PLN "; $_SESSION['ost_cena'] = (int)$row['Cena'] * (1-(int)$obnizka*0.01);?>
                          
                          
                          

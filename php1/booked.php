@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang = "pl">
 <head>
@@ -30,7 +33,6 @@
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
     
-    
     //klienta nie ma w bazie
     if($connection->connect_errno != 0)
     {
@@ -39,16 +41,46 @@
     else
     { 
         $sql = "INSERT INTO `Klient`  VALUES (NULL,'{$email}','{$name}','{$surname}','{$id_number}','{$city}','{$postcode}','{$street}','{$build_num}');";
+        
+        //dodanie nowego klienta
         if(mysqli_query($connection,$sql))
         {
-            echo"Grejt Succes";
+           
+        }
+        else
+        {
+           echo "Query error".$connection->connect_errno."Opis: ".$connection->connect_error;
+        }
+        
+        $sql = "SELECT idKlient from Klient WHERE nrDowodu = '{$id_number}'";
+        $id_klienta;
+        //wyciagniecie jego ID
+        if($rezultat = @$connection->query($sql))
+        {
+
+            while($row = mysqli_fetch_assoc($rezultat)) 
+            {
+
+                $id_klienta = $row['idKlient'];
+            //echo print_r($row);       // Print the entire row data
+            }
+        }
+        
+        
+        $sql = "INSERT INTO `Zamowienie`  VALUES (NULL,'{$_SESSION['przyjazd']}','{$_SESSION['wyjazd']}',{$_SESSION['ost_cena']},{$id_klienta},1,{$_SESSION['rem_nrPokoj']});";
+       
+        //dodanie do bazy 
+        if(mysqli_query($connection,$sql))
+        {
+            
         }
         else
         {
            echo "Query error".$connection->connect_errno."Opis: ".$connection->connect_error;
         }
         $connection->close();
-    }  
+    }          
+        
     ?>
     
     <form action ="index.php" align="center" style="margin-top: 200px;">

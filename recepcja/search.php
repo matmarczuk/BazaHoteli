@@ -34,7 +34,7 @@ th {
                 <th>Nazwisko</th>
                 <th>Dokument</th>
                 <th>Adres <br><br/> miasto kod ulica numer</th>
-                <th>Data przybycia</th>
+                <th>Data pobytu</th>
                 <th>Naleznosc</th>
                 <td colspan="2">DZIAŁANIE</td>
             </style>
@@ -53,13 +53,14 @@ th {
         if(!empty($_POST['name1']) && !empty($_POST['surname']))
         {
             
-            $sql = "SELECT Kl.*,termin,cena,Rezerwacja_idRezerwacja FROM Zamowienie JOIN Klient AS Kl ON idKlient=Klient_idKlient WHERE imie = '{$name}' AND nazwisko = '{$surname}'";
-            echo $sql;
+            $sql = "SELECT Kl.* , Z.* FROM Zamowienie AS Z JOIN Klient AS Kl ON Kl.idKlient = Z.Klient_idKlient WHERE imie = '{$name}' AND nazwisko = '{$surname}';";
+            
             
         }
         elseif(!empty($_POST['res_id']))
         {
-            $sql = "SELECT Kl.*,termin,cena,Rezerwacja_idRezerwacja FROM Zamowienie JOIN Klient AS Kl ON idKlient=Klient_idKlient WHERE Rezerwacja_idRezerwacja = '{$res_id}'";
+            $sql = "SELECT Kl.* , Z.* FROM Zamowienie AS Z JOIN Klient AS Kl ON Kl.idKlient = Z.Klient_idKlient WHERE idZamowienie = $res_id;";
+
         }
 	$connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
 	//$connection = @new mysqli($host,$db_user,$db_password,$db_name);
@@ -85,12 +86,12 @@ th {
             
         <tr height="50">
             
-            <td><?php echo $row['Rezerwacja_idRezerwacja'] ?></td>
+            <td><?php echo $row['idZamowienie'] ?></td>
             <td><?php echo $row['imie'] ?></td>
             <td><?php echo $row['nazwisko'];?></td>
             <td><?php echo $row['nrDowodu'];?></td>
-            <td><?php echo $row['adres_miasto']." ", $row['adres_kod pocztowy']." ", $row['adres_ulica']." ", $row['adres_nrBudynku'];?></td>
-            <td><?php echo substr($row['termin'],0,10);?></td>
+            <td><?php echo $row['adres_miasto']." ", $row['adres_kodPocztowy']." ", $row['adres_ulica']." ", $row['adres_nrBudynku'];?></td>
+            <td><?php echo substr($row['data_od'],0,10),"<br>",substr($row['data_do'],0,10);?></td>
             <td><?php echo $row['cena'];?></td>
             <td><input style ="background-color: gold;
                                width: 100px;" 

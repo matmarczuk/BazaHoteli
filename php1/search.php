@@ -66,7 +66,7 @@ th {
         $_SESSION['wyjazd'] = $dep_date;
         $_SESSION['losob'] = $pers_num;
                 
-        echo $arr_date;
+        
 	$sql = "select  Hotel.nazwa, Hotel.adres_miasto, Hotel.idHotel, WidokZOkna.Widok, Pokoj.Cena, Pokoj.nrPokoju
         from Hotel 
         inner join Pietro on Hotel.idHotel = Pietro.Hotel_idHotel 
