@@ -8,7 +8,7 @@ join Zamowienie on Pokoj.nrPokoju = Zamowienie.Pokoj_nrPokoju
 where 
 	Hotel.nazwa = 'Srebrna to┼ä'
 	and StandardPokoju.StandardPokoju = 'Standard'
-	and standardpokoju.maxLiczbaOsob <= 5
+	and StandardPokoju.maxLiczbaOsob <= 5
 	and Pokoj.nrPokoju not in  (select Pokoj.nrPokoju 
 							from Hotel 
 							inner join Pietro on Hotel.idHotel = Pietro.Hotel_idHotel 
