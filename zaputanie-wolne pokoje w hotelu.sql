@@ -17,7 +17,7 @@ where
 							join Zamowienie on Pokoj.nrPokoju = Zamowienie.Pokoj_nrPokoju
                             where 
 								 (Zamowienie.data_od <= '2018-08-15' and Zamowienie.data_do >= '2018-08-20'))
-group by Pokoj.nrPokoju,Pietro.idPietro, WidokZOkna.idWidokZOkna;
+group by Pokoj.nrPokoju,Pietro.ktorePietro, WidokZOkna.Widok;
 					
 
 
