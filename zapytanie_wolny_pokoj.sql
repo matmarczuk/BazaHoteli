@@ -28,5 +28,5 @@
 			join StandardPokoju on Pokoj.StandardPokoju_idStandardPokoju = StandardPokoju.idStandardPokoju
 			join Zamowienie on Pokoj.nrPokoju = Zamowienie.Pokoj_nrPokoju
                             where (Zamowienie.data_od <= '2018-08-15' and Zamowienie.data_do >= '2018-08-20'))
-group by Pokoj.nrPokoju;
+group by Pokoj.nrPokoju,Hotel.nazwa, Hotel.adres_miasto, Hotel.idHotel,  Pokoj.Cena;
 
