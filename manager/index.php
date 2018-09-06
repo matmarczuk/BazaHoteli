@@ -11,27 +11,23 @@
  
     <h1 align = "center" style="color: #ffbf00;">Panel managera</h1>
 
-<div class="transbox"> 
-	<form class = "searching" action = "search.php" method = "post">
-            Imię:<input class="name1" type ="text" name = "name1">
+<div class="transbox" style="text-align: center;"> 
+  
+        <form action="dodaj_rabat.php" method = "post">
+            <input type="submit" value="DODAJ RABAT"/>
             
-            Nazwisko:<input class="surname" type ="text" name = "surname"/>
-            <br><br>
-            Numer rezerwacji: <input class="res_id" type ="text" name = "res_id"/>
-            <br><br>
-		<input class = "szukaj" type = "submit" value = "SZUKAJ"/>
         </form>
-</div>
-    <div class="transbox" style="background-color: graytext;"> 
-	<form class = "searching" action = "search.php" method = "post">
-            Imię:<input class="name1" type ="text" name = "name1">
+    <br></br>
+        <form avtion="dodaj_pokoj.php">
+            <input type="submit" value="DODAJ POKOJ"/>
             
-            Nazwisko:<input class="surname" type ="text" name = "surname"/>
-            <br><br>
-            Numer rezerwacji: <input class="res_id" type ="text" name = "res_id"/>
-            <br><br>
-		<input class = "szukaj" type = "submit" value = "SZUKAJ"/>
         </form>
+           <br></br>
+        <form avtion="dodaj_pokoj.php">
+            <input type="submit" value="MODYFIKUJ POKÓJ"/>
+            
+        </form>
+        
 </div>
 	<?php
 

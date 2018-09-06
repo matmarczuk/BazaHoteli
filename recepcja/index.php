@@ -21,6 +21,9 @@
             <br><br>
 		<input class = "szukaj" type = "submit" value = "SZUKAJ"/>
         </form>
+    <form action="../php1/index.php">
+        <input type = "submit" value = "ZNAJDŹ WOLNY POKÓJ" style=""/>
+    </form>
 </div>
 
 	<?php

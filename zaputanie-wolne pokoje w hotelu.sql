@@ -6,7 +6,7 @@ join StandardPokoju on Pokoj.StandardPokoju_idStandardPokoju = StandardPokoju.id
 join WidokZOkna on WidokZOkna.idWidokZOkna = Pokoj.WidokZOkna_idWidokZOkna
 join Zamowienie on Pokoj.nrPokoju = Zamowienie.Pokoj_nrPokoju
 where 
-	Hotel.nazwa = 'Srebrna to┼ä'
+	Hotel.nazwa = 'Srebrna toń'
 	and StandardPokoju.StandardPokoju = 'Standard'
 	and StandardPokoju.maxLiczbaOsob <= 5
 	and Pokoj.nrPokoju not in  (select Pokoj.nrPokoju 
