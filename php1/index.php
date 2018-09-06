@@ -35,13 +35,12 @@
 
 		
 	Data przyjazdu:
-  	<input type="date" name="arr_date">
+        <input type="date" name="arr_date" placeholder="<?=Date('j-n-Y')?>">
 	<pre></pre>
 	Data wyjazdu: 
 	<input type="date" name="dep_date">
 		<br /> <br />
 		
-	<label><input type="checkbox">SPA</label>
 <br /> <br />	
 		<input class = "szukaj" type = "submit" value = "SZUKAJ"/>
 	</div>

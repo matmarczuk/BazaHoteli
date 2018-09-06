@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang = "pl">
 <head>
@@ -39,26 +42,28 @@ th {
                 <td colspan="2">DZIAŁANIE</td>
             </style>
         </thead>
-    
+                <form action="room.php" method = "post">
     <tbody>
     <form>
 <?php
 
 	require_once "connect.php";
-        	$name = $_POST['name1'];
-        $surname=$_POST['surname'];
-        $res_id = $_POST['res_id'];
+        $name; $surname;
+        $res_id;
 	//$arr_date = $_POST['arr_date'];
 	//$dep_date = $_POST['dep_date'];
         if(!empty($_POST['name1']) && !empty($_POST['surname']))
-        {
+        {   $name = $_POST['name1'];
+            $surname= $_POST['surname'];
             
             $sql = "SELECT Kl.* , Z.* FROM Zamowienie AS Z JOIN Klient AS Kl ON Kl.idKlient = Z.Klient_idKlient WHERE imie = '{$name}' AND nazwisko = '{$surname}';";
             
             
         }
         elseif(!empty($_POST['res_id']))
-        {
+        {   
+            $res_id = $_POST['res_id'];
+
             $sql = "SELECT Kl.* , Z.* FROM Zamowienie AS Z JOIN Klient AS Kl ON Kl.idKlient = Z.Klient_idKlient WHERE idZamowienie = $res_id;";
 
         }
@@ -82,27 +87,29 @@ th {
         {
         
         ?>
-        <form action = "booking.php" method = "post">
-            
+       
+
         <tr height="50">
-            
-            <td><?php echo $row['idZamowienie'] ?></td>
+             
+             
+            <td><?php echo $row['idZamowienie'] ?></td> 
             <td><?php echo $row['imie'] ?></td>
             <td><?php echo $row['nazwisko'];?></td>
             <td><?php echo $row['nrDowodu'];?></td>
             <td><?php echo $row['adres_miasto']." ", $row['adres_kodPocztowy']." ", $row['adres_ulica']." ", $row['adres_nrBudynku'];?></td>
             <td><?php echo substr($row['data_od'],0,10),"<br>",substr($row['data_do'],0,10);?></td>
             <td><?php echo $row['cena'];?></td>
+            
             <td><input style ="background-color: gold;
                                width: 100px;" 
                                type = "submit" value = "WPŁATA"/></td>
             <td><input style ="background-color: red;
                                width: 100px;" 
                                type = "submit" value = "ANULACJA"/></td>
-             <!-- <input type="hidden" value=<?php //echo $row['idHotel']?> name="id"/> -->
+            <input type="hidden" value=<?php echo $row['idZamowienie']?> name="idZamowienie"/>
+    </form>
+
         </tr>
-        </form>
-        
 	<?php
 	}
         
@@ -112,9 +119,11 @@ th {
         
         }
         ?>
-        </form>
+        
 
     </tbody>
+        </form>
+
     </table>
 </body>
 </html>

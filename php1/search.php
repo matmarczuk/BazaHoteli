@@ -100,7 +100,7 @@ th {
 		join Zamowienie on Pokoj.nrPokoju = Zamowienie.Pokoj_nrPokoju
                 where (Zamowienie.data_od <= '$arr_date' and Zamowienie.data_do >= '$dep_date'))
 	group by Pokoj.nrPokoju;";
-    
+         echo $sql;
 	if($rezultat = @$connection->query($sql))
 	{
 
