@@ -18,12 +18,12 @@
             
         </form>
     <br></br>
-        <form avtion="dodaj_pokoj.php">
+        <form action="dodaj_pokoj.php">
             <input type="submit" value="DODAJ POKOJ"/>
             
         </form>
            <br></br>
-        <form avtion="dodaj_pokoj.php">
+        <form action="zmien_pokoj.php">
             <input type="submit" value="MODYFIKUJ POKÓJ"/>
             
         </form>
