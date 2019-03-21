@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php 
-    require_once "../reception/connect.php";
+    require_once "../connect.php";
 
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     

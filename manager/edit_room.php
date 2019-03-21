@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php 
-    require_once "../recepcja/connect.php";
+    require_once "../connect.php";
 
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
@@ -41,7 +41,7 @@
     
     
         <br></br>
-        <form action="zmien_pokoj.php">
+        <form action="change_room.php">
         <input type ="submit" style="background-color: gold; width: 300px;" value="POWRÓT DO PANELU">
     </form>
 </body>

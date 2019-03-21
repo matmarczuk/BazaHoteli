@@ -17,7 +17,7 @@ th {
 </head>
 <body>
     <?php
-    require_once "connect.php";
+    require_once "../connect.php";
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     $sql = "SELECT P.nrPokoju,Pi.ktorePietro FROM Zamowienie AS Z JOIN Pokoj AS P ON P.nrPokoju =  Z.Pokoj_nrPokoju  JOIN Pietro AS Pi ON P.Pietro_idPietro=Pi.idPietro WHERE idZamowienie ={$_POST['idZamowienie']};";
     

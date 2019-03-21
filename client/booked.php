@@ -18,7 +18,7 @@ session_start();
 <body>
     
    <?php 
-    require_once "connect.php";
+    require_once "../connect.php";
     
     //dane klienta - sprawdz po id_ czy już jest w bazie - jeżeli tak to weź jego id;
     $email = $_POST['email'];

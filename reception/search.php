@@ -47,7 +47,7 @@ th {
     <form>
 <?php
 
-	require_once "connect.php";
+	require_once "../connect.php";
         $name; $surname;
         $res_id;
 	//$arr_date = $_POST['arr_date'];

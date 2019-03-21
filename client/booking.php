@@ -12,7 +12,7 @@ session_start();
 <body>
     <?php
 
-    require_once "connect.php";
+    require_once "../connect.php";
     
     ///////////////////////////////////////////////////
     $obnizka = 0; //nominalny rabat
