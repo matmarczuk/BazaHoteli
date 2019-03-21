@@ -1,6 +1,6 @@
 # HolidayHotelBooking
 
-Student Holiday Hotel Booking system project made for database course. System is divided into 3 parts: client, manager and reception. Each has its own functions and UIs but every of them operate on the same SQL database.
+Student Holiday Hotel Booking system project made for database course. System offers 3 roles: client, manager and reception. Each role has its own functions and UIs but every of them operate on the same SQL database.
 
 ## Launching
 
@@ -16,11 +16,11 @@ mysql -u <username> -p
 
 #### Create database
 ```
-mysql> source <path_to_clone_dir>\HolidayHotelBooking\construct_db.sql;
+mysql> source <path_to_cloned_dir>\construct_db.sql;
 ```
 #### Fill database with example records
 ```
-mysql> source <path_to_clone_dir>\HolidayHotelBooking\insert_example_data.sql;
+mysql> source <path_to_cloned_dir>\insert_example_data.sql;
 ```
 #### Insert user,socket dir and host into connect.php file 
 
