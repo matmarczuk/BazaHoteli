@@ -25,11 +25,11 @@ mysql> source <path_to_clone_dir>\HolidayHotelBooking\insert_example_data.sql;
 #### Insert user,socket dir and host into connect.php file 
 
 ```
-  $socket = '<server_socket_dir>';
-	$host = "<host_name>";
-	$db_user = "<username>";
-	$db_password = "<password>";
-	$db_name = "mydb1";
+$socket = '<server_socket_dir>';
+$host = "<host_name>";
+$db_user = "<username>";
+$db_password = "<password>";
+$db_name = "mydb1";
   
 ```
 #### Run one of the type of service using your browser
