@@ -13,17 +13,17 @@
 
 <div class="transbox" style="text-align: center;"> 
   
-        <form action="dodaj_rabat.php" method = "post">
+        <form action="add_discount.php" method = "post">
             <input type="submit" value="DODAJ RABAT"/>
             
         </form>
     <br></br>
-        <form action="dodaj_pokoj.php">
+        <form action="add_room.php">
             <input type="submit" value="DODAJ POKOJ"/>
             
         </form>
            <br></br>
-        <form action="zmien_pokoj.php">
+        <form action="change_room.php">
             <input type="submit" value="MODYFIKUJ POKÓJ"/>
             
         </form>

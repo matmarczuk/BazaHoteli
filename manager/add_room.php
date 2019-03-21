@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php 
-    require_once "../recepcja/connect.php";
+    require_once "../reception/connect.php";
 
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
@@ -26,7 +26,7 @@
         if($rezultat = @$connection->query($sql))
         {
             ?>
-        <form action="dodaj_pokoj.php" method="post" style="text-align: center; transform: scale(0.85);"> 
+        <form action="add_room.php" method="post" style="text-align: center; transform: scale(0.85);"> 
        Wybierz hotel: <select name="hotel" size="1"> <?php
             while ($row = mysqli_fetch_assoc($rezultat))
             {   ?>

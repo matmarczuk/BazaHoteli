@@ -30,7 +30,7 @@
     <?php 
 
    
-    require_once "../recepcja/connect.php";
+    require_once "../reception/connect.php";
 
     $connection = @new mysqli($host, $db_user, $db_password,$db_name, 3306, $socket);
     
@@ -76,7 +76,7 @@
         </tbody>
      </table>
     <div class ="transbox" align = "center" >
-        <form action ="dodaj_rabat.php" method="post">
+        <form action ="add_discount.php" method="post">
             KOD:
             <input type="text" placeholder="KOD" name="kod"/>
             <br></br>
